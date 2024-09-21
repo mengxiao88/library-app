@@ -1,6 +1,6 @@
 import { ReturnBook } from "./ReturnBook";
 import { useEffect, useState } from "react";
-import BookModel from "../../../models/BookModels";
+import BookModel from "../../../models/BookModel";
 import { SpinnerLoading } from "../../Utils/SpinnerLoading";
 
 export const Carousel = () => {
@@ -11,7 +11,7 @@ export const Carousel = () => {
 
     useEffect(() => {
         const fetchBooks = async () => {
-            const baseUrl: string = 'http://localhost:8080/api/books'
+            const baseUrl: string = 'http://localhost:8080/api/books';
 
             const url: string = `${baseUrl}?page=0&size=9`;
 
@@ -33,7 +33,7 @@ export const Carousel = () => {
                     title: responseData[key].title,
                     author: responseData[key].author,
                     description: responseData[key].description,
-                    cpies: responseData[key].copies,
+                    copies: responseData[key].copies,
                     copiesAvailable: responseData[key].copiesAvailable,
                     category: responseData[key].category,
                     img: responseData[key].img

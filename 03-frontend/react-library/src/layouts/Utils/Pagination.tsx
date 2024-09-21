@@ -1,30 +1,30 @@
-export const Pagination: React.FC<{currnetPage:number,
+export const Pagination: React.FC<{currentPage:number,
     totalPages: number,
     paginate: any}> = (props) => {
     
     const pageNumbers = [];
-    if (props.currnetPage == 1) {
-        pageNumbers.push(props.currnetPage);
-        if (props.totalPages >= props.currnetPage + 1) {
-            pageNumbers.push(props.currnetPage + 1);
+    if (props.currentPage == 1) {
+        pageNumbers.push(props.currentPage);
+        if (props.totalPages >= props.currentPage + 1) {
+            pageNumbers.push(props.currentPage + 1);
         }
-        if (props.totalPages >= props.currnetPage + 2) {
-            pageNumbers.push(props.currnetPage + 2);
+        if (props.totalPages >= props.currentPage + 2) {
+            pageNumbers.push(props.currentPage + 2);
         }
-    } else if (props.currnetPage > 1) {
-        if ( props.currnetPage >=3 ) {
-            pageNumbers.push(props.currnetPage - 2);
-            pageNumbers.push(props.currnetPage - 1);
+    } else if (props.currentPage > 1) {
+        if ( props.currentPage >=3 ) {
+            pageNumbers.push(props.currentPage - 2);
+            pageNumbers.push(props.currentPage - 1);
         } else {
-            pageNumbers.push(props.currnetPage - 1)
+            pageNumbers.push(props.currentPage - 1)
         }
 
-        pageNumbers.push(props.currnetPage);
-        if (props.totalPages >= props.currnetPage + 1) {
-            pageNumbers.push(props.currnetPage + 1);
+        pageNumbers.push(props.currentPage);
+        if (props.totalPages >= props.currentPage + 1) {
+            pageNumbers.push(props.currentPage + 1);
         }
-        if (props.totalPages >= props.currnetPage + 2) {
-            pageNumbers.push(props.currnetPage + 2);
+        if (props.totalPages >= props.currentPage + 2) {
+            pageNumbers.push(props.currentPage + 2);
         }
     }
         
@@ -32,11 +32,13 @@ export const Pagination: React.FC<{currnetPage:number,
         <nav aria-label="...">
             <ul className='pagination'>
                 <li className='page-item' onClick={() => props.paginate(1)}>
-                    First Page
+                    <button className='page-link'>
+                        First Page
+                    </button> 
                 </li>
                 {pageNumbers.map(number => (
                     <li key={number} onClick={() => props.paginate(number)}
-                        className={'page-item' + (props.currnetPage === number ? 'active' : '')}>
+                        className={'page-item' + (props.currentPage === number ? 'active' : '')}>
                             <button className='page-link'>
                                 {number}
                             </button>
