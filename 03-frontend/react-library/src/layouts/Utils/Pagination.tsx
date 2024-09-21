@@ -3,7 +3,7 @@ export const Pagination: React.FC<{currentPage:number,
     paginate: any}> = (props) => {
     
     const pageNumbers = [];
-    if (props.currentPage == 1) {
+    if (props.currentPage === 1) {
         pageNumbers.push(props.currentPage);
         if (props.totalPages >= props.currentPage + 1) {
             pageNumbers.push(props.currentPage + 1);
@@ -51,5 +51,5 @@ export const Pagination: React.FC<{currentPage:number,
                 </li>
             </ul>
         </nav>
-    )
+    );
 }
