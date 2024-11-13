@@ -24,7 +24,7 @@ public class Review {
     private Date date;
 
     @Column(name = "rating")
-    private int rating;
+    private Double rating;
 
     @Column(name = "book_id")
     private Long bookId;
