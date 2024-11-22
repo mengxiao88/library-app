@@ -56,9 +56,8 @@ export const CheckoutAndReviewBox: React.FC<{
     }
     return (
       <div>
-        <hr>
+        <hr/>
           <p>Sign in to be able to leave a review.</p>
-        </hr>
       </div>
     );
   }
