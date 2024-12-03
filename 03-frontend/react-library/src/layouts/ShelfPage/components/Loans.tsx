@@ -23,7 +23,7 @@ export const Loans = () => {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${authState.accessToken?.accessToken}`
+            'Authorization': `Bearer ${authState?.accessToken?.accessToken}`
           }
         };
         const selfCurrentLoansResponse = await fetch(url, requestOptions);
