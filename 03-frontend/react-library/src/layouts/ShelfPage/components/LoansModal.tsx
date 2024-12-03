@@ -72,7 +72,7 @@ export const LoansModal: React.FC<{ shelfCurrentLoan: ShelfCurrentLoans, mobile:
                           "Late dues cannot be renewed" :
                           "Renew loan for 7 days"
                         }
-                    </button>event.preventDefault()
+                    </button>
                   </div>
                 </div>
               </div>
